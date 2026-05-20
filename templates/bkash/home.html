@@ -1,0 +1,40 @@
+{% load static %}
+<!-- templates/login.html -->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="{% static 'css/bkash/style.css' %}">
+    
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="login-container">
+        <img src="{% static 'images/bkash/bkash_logo.png' %}" class= "bkash-logo" alt="Bkash Logo">
+      <h2>Login</h2>
+
+      <!-- Display errors if credentials are wrong -->
+      {% if form.errors %}
+      <p class="error">
+        Your username and password didn't match. Please try again.
+      </p>
+      {% endif %}
+
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+          <label for="id_username">Username:</label>
+          {{ form.username }}
+        </div>
+
+        <div class="form-group">
+          <label for="id_password">Password:</label>
+          {{ form.password }}
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+      </form>
+    </div>
+  </body>
+</html>
