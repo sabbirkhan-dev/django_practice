@@ -25,6 +25,7 @@ urlpatterns = [
     path('bkash/', include('bkash.urls')),
     path('lemon/', include('lemon.urls')),
     path('orange/', include('orange.urls')),
+    path('meta/', include('meta.urls')),
 ]
 
 handler404 = 'myproject.views.handler404'

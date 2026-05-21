@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bkash',
     'banana',
     'apple',
+    'meta',
 ]
 
 MIDDLEWARE = [
